@@ -24,4 +24,5 @@
     <color name="button_icon">#212121</color>
     <color name="primary_icon">#FFFFFF</color>
     <color name="surface">#2D2D2D</color>
+    <color name="map_background">#1E1E1E</color>
 </resources>

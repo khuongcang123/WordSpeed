@@ -48,7 +48,6 @@
                     android:textSize="16sp"
                     app:backgroundTint="@color/primary_button"
                     app:cornerRadius="28dp"
-                    app:icon="@drawable/ic_play"
                     app:iconTint="@color/button_icon"
                     android:layout_gravity="center_horizontal"/>
 
