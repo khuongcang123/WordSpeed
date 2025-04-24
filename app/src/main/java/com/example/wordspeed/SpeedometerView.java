@@ -1,6 +1,5 @@
 package com.example.wordspeed;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -41,9 +40,6 @@ public class SpeedometerView extends View {
     private float radius;
     private float needleBaseWidth;
     private Typeface digitalTypeface;
-    private ValueAnimator distanceAnimator;
-    private int animatedDistance = 0;
-
 
     public SpeedometerView(Context context, AttributeSet attrs) {
         super(context, attrs);

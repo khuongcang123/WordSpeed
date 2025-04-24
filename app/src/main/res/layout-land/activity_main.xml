@@ -7,46 +7,27 @@
     android:background="@color/dark_background"
     android:padding="24dp">
 
-    <!-- Guideline trái cho mặt đồng hồ -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
-
-    <!-- Guideline phải cho phần thông tin -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
-
     <!-- Speedometer với hiệu ứng đổ bóng -->
     <com.example.wordspeed.SpeedometerView
         android:id="@+id/speedometerViewLandscape"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/bg_speedometer"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guidelineLeft"
-        app:elevation="8dp" />
-
-    <!-- Khung bản đồ -->
-    <FrameLayout
-        android:id="@+id/mapContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/map_background"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
-        app:layout_constraintEnd_toStartOf="@id/guidelineRight" />
+        app:elevation="8dp"/>
 
-    <!-- Panel thông tin -->
+    <!-- Đường phân cách ảo -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <!-- Panel thông tin trong CardView, thêm ID để dễ dàng truy cập -->
     <androidx.cardview.widget.CardView
         android:id="@+id/landscapeLayout"
         android:layout_width="0dp"
@@ -55,10 +36,10 @@
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/guidelineRight"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,7 +58,7 @@
                 android:gravity="center"
                 android:layout_marginBottom="24dp"/>
 
-            <!-- Real-time Info -->
+            <!-- Real-time Info với scroll -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -94,7 +75,7 @@
                     android:gravity="start"/>
             </ScrollView>
 
-            <!-- Nhóm nút -->
+            <!-- Nhóm nút điều khiển -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
